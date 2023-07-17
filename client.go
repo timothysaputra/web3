@@ -6,3 +6,5 @@ type Client interface {
 	GetCode(ctx context.Context, address string, blockNumber *big.Int) ([]byte, error)
 GetBlockByNumber(ctx context.Context, number *big.Int, includeTxs bool) (*Block, error)
 	// GetBlockByHash returns block details for the given hash, optionally include full transaction details.
+GetBlockByHash(ctx context.Context, hash string, includeTxs bool) (*Block, error)
+	// GetTransactionByHash returns transaction details for a hash.
