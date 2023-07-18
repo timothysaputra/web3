@@ -8,3 +8,5 @@ GetBlockByNumber(ctx context.Context, number *big.Int, includeTxs bool) (*Block,
 	// GetBlockByHash returns block details for the given hash, optionally include full transaction details.
 GetBlockByHash(ctx context.Context, hash string, includeTxs bool) (*Block, error)
 	// GetTransactionByHash returns transaction details for a hash.
+GetTransactionByHash(ctx context.Context, hash common.Hash) (*Transaction, error)
+	// GetSnapshot returns the latest clique snapshot.
