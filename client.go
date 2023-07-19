@@ -10,3 +10,5 @@ GetBlockByHash(ctx context.Context, hash string, includeTxs bool) (*Block, error
 	// GetTransactionByHash returns transaction details for a hash.
 GetTransactionByHash(ctx context.Context, hash common.Hash) (*Transaction, error)
 	// GetSnapshot returns the latest clique snapshot.
+GetSnapshot(ctx context.Context) (*Snapshot, error)
+	// GetID returns unique identifying information for the network.
