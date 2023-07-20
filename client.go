@@ -12,3 +12,5 @@ GetTransactionByHash(ctx context.Context, hash common.Hash) (*Transaction, error
 	// GetSnapshot returns the latest clique snapshot.
 GetSnapshot(ctx context.Context) (*Snapshot, error)
 	// GetID returns unique identifying information for the network.
+GetChainID(ctx context.Context) (*big.Int, error)
+	// GetNetworkID returns the network id.
