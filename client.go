@@ -14,3 +14,5 @@ GetSnapshot(ctx context.Context) (*Snapshot, error)
 	// GetID returns unique identifying information for the network.
 GetChainID(ctx context.Context) (*big.Int, error)
 	// GetNetworkID returns the network id.
+GetNetworkID(ctx context.Context) (*big.Int, error)
+	// GetGasPrice returns a suggested gas price.
