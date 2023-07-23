@@ -18,3 +18,5 @@ GetNetworkID(ctx context.Context) (*big.Int, error)
 	// GetGasPrice returns a suggested gas price.
 GetGasPrice(ctx context.Context) (*big.Int, error)
 	// GetPendingTransactionCount returns the transaction count including pending txs.
+// This value is also the next legal nonce.
+	GetPendingTransactionCount(ctx context.Context, account common.Address) (uint64, error)
