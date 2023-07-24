@@ -20,3 +20,5 @@ GetGasPrice(ctx context.Context) (*big.Int, error)
 	// GetPendingTransactionCount returns the transaction count including pending txs.
 // This value is also the next legal nonce.
 	GetPendingTransactionCount(ctx context.Context, account common.Address) (uint64, error)
+// SendRawTransaction sends the signed raw transaction bytes.
+	SendRawTransaction(ctx context.Context, tx []byte) error
