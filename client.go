@@ -22,3 +22,5 @@ GetGasPrice(ctx context.Context) (*big.Int, error)
 	GetPendingTransactionCount(ctx context.Context, account common.Address) (uint64, error)
 // SendRawTransaction sends the signed raw transaction bytes.
 	SendRawTransaction(ctx context.Context, tx []byte) error
+// Call executes a call without submitting a transaction.
+	Call(ctx context.Context, msg CallMsg) ([]byte, error)
