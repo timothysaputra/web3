@@ -24,3 +24,5 @@ GetGasPrice(ctx context.Context) (*big.Int, error)
 	SendRawTransaction(ctx context.Context, tx []byte) error
 // Call executes a call without submitting a transaction.
 	Call(ctx context.Context, msg CallMsg) ([]byte, error)
+Close()
+	SetChainID(*big.Int)
