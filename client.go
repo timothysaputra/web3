@@ -26,3 +26,6 @@ GetGasPrice(ctx context.Context) (*big.Int, error)
 	Call(ctx context.Context, msg CallMsg) ([]byte, error)
 Close()
 	SetChainID(*big.Int)
+}
+
+// Dial returns a new client backed by dialing url (supported schemes "http", "https", "ws" and "wss").
