@@ -29,3 +29,4 @@ Close()
 }
 
 // Dial returns a new client backed by dialing url (supported schemes "http", "https", "ws" and "wss").
+func Dial(url string) (Client, error) {
