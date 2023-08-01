@@ -32,3 +32,6 @@ Close()
 func Dial(url string) (Client, error) {
 r, err := rpc.Dial(url)
 	if err != nil {
+		return nil, err
+	}
+	return NewClient(r), nil
