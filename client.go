@@ -38,3 +38,5 @@ r, err := rpc.Dial(url)
 }
 
 // NewClient returns a new client backed by an existing rpc.Client.
+func NewClient(r *rpc.Client) Client {
+	return &client{r: r}
