@@ -48,3 +48,5 @@ r       *rpc.Client
 }
 
 func (c *client) Close() {
+c.r.Close()
+}
