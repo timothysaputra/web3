@@ -50,3 +50,6 @@ r       *rpc.Client
 func (c *client) Close() {
 c.r.Close()
 }
+
+func (c *client) Call(ctx context.Context, msg CallMsg) ([]byte, error) {
+	var result hexutil.Bytes
