@@ -58,3 +58,6 @@ err := c.r.CallContext(ctx, &result, "eth_call", toCallArg(msg), "latest")
 	return nil, err
 	}
 	return result, err
+}
+
+func (c *client) GetBalance(ctx context.Context, address string, blockNumber *big.Int) (*big.Int, error) {
