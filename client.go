@@ -61,3 +61,5 @@ err := c.r.CallContext(ctx, &result, "eth_call", toCallArg(msg), "latest")
 }
 
 func (c *client) GetBalance(ctx context.Context, address string, blockNumber *big.Int) (*big.Int, error) {
+var result hexutil.Big
+	err := c.r.CallContext(ctx, &result, "eth_getBalance", common.HexToAddress(address), toBlockNumArg(blockNumber))
