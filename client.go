@@ -65,3 +65,4 @@ var result hexutil.Big
 	err := c.r.CallContext(ctx, &result, "eth_getBalance", common.HexToAddress(address), toBlockNumArg(blockNumber))
 	return (*big.Int)(&result), err
 }
+func (c *client) GetCode(ctx context.Context, address string, blockNumber *big.Int) ([]byte, error) {
