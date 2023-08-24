@@ -75,3 +75,5 @@ func (c *client) GetBlockByNumber(ctx context.Context, number *big.Int, includeT
 	return c.getBlock(ctx, "eth_getBlockByNumber", toBlockNumArg(number), includeTxs)
 }
 func (c *client) GetBlockByHash(ctx context.Context, hash string, includeTxs bool) (*Block, error) {
+return c.getBlock(ctx, "eth_getBlockByHash", hash, includeTxs)
+}
