@@ -80,3 +80,4 @@ return c.getBlock(ctx, "eth_getBlockByHash", hash, includeTxs)
 
 func (c *client) GetTransactionByHash(ctx context.Context, hash common.Hash) (*Transaction, error) {
 	var tx *Transaction
+err := c.r.CallContext(ctx, &tx, "eth_getTransactionByHash", hash.String())
