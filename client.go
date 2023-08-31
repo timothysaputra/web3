@@ -83,3 +83,5 @@ func (c *client) GetTransactionByHash(ctx context.Context, hash common.Hash) (*T
 err := c.r.CallContext(ctx, &tx, "eth_getTransactionByHash", hash.String())
 if err != nil {
 		return nil, err
+} else if tx == nil {
+		return nil, NotFoundErr
