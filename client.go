@@ -85,3 +85,4 @@ if err != nil {
 		return nil, err
 } else if tx == nil {
 		return nil, NotFoundErr
+} else if tx.R == nil {
