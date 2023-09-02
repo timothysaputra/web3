@@ -86,3 +86,5 @@ if err != nil {
 } else if tx == nil {
 		return nil, NotFoundErr
 } else if tx.R == nil {
+	return nil, fmt.Errorf("server returned transaction without signature")
+	}
