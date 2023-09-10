@@ -90,3 +90,5 @@ if err != nil {
 	}
 return tx, nil
 }
+
+func (c *client) GetSnapshot(ctx context.Context) (*Snapshot, error) {
