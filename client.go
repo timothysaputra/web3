@@ -92,3 +92,5 @@ return tx, nil
 }
 
 func (c *client) GetSnapshot(ctx context.Context) (*Snapshot, error) {
+var s Snapshot
+	err := c.r.CallContext(ctx, &s, "clique_getSnapshot", "latest")
