@@ -97,3 +97,5 @@ var s Snapshot
 if err != nil {
 		return nil, err
 	}
+return &s, nil
+}
