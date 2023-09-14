@@ -99,3 +99,6 @@ if err != nil {
 	}
 return &s, nil
 }
+
+func (c *client) GetID(ctx context.Context) (*ID, error) {
+	var block Block
