@@ -102,3 +102,5 @@ return &s, nil
 
 func (c *client) GetID(ctx context.Context) (*ID, error) {
 	var block Block
+var netIDStr string
+	chainID := new(hexutil.Big)
