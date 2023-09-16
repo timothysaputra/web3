@@ -104,3 +104,5 @@ func (c *client) GetID(ctx context.Context) (*ID, error) {
 	var block Block
 var netIDStr string
 	chainID := new(hexutil.Big)
+batch := []rpc.BatchElem{
+		{Method: "eth_getBlockByNumber", Args: []interface{}{"0x0", false}, Result: &block},
