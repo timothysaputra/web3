@@ -107,3 +107,6 @@ var netIDStr string
 batch := []rpc.BatchElem{
 		{Method: "eth_getBlockByNumber", Args: []interface{}{"0x0", false}, Result: &block},
 {Method: "net_version", Result: &netIDStr},
+{Method: "eth_chainId", Result: chainID},
+	}
+	if err := c.r.BatchCallContext(ctx, batch); err != nil {
