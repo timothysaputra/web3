@@ -110,3 +110,7 @@ batch := []rpc.BatchElem{
 {Method: "eth_chainId", Result: chainID},
 	}
 	if err := c.r.BatchCallContext(ctx, batch); err != nil {
+	return nil, err
+	}
+	for _, e := range batch {
+		if e.Error != nil {
