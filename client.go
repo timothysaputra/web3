@@ -114,3 +114,7 @@ batch := []rpc.BatchElem{
 	}
 	for _, e := range batch {
 		if e.Error != nil {
+	log.Printf("Method %q failed: %v\n", e.Method, e.Error)
+		}
+	}
+	netID := new(big.Int)
