@@ -120,3 +120,8 @@ batch := []rpc.BatchElem{
 	netID := new(big.Int)
 if _, ok := netID.SetString(netIDStr, 10); !ok {
 		return nil, fmt.Errorf("invalid net_version result %q", netIDStr)
+}
+	return &ID{NetworkID: netID, ChainID: (*big.Int)(chainID), GenesisHash: block.Hash}, nil
+}
+
+func (c *client) GetNetworkID(ctx context.Context) (*big.Int, error) {
