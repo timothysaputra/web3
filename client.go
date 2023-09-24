@@ -125,3 +125,6 @@ if _, ok := netID.SetString(netIDStr, 10); !ok {
 }
 
 func (c *client) GetNetworkID(ctx context.Context) (*big.Int, error) {
+version := new(big.Int)
+	var ver string
+	if err := c.r.CallContext(ctx, &ver, "net_version"); err != nil {
