@@ -128,3 +128,6 @@ func (c *client) GetNetworkID(ctx context.Context) (*big.Int, error) {
 version := new(big.Int)
 	var ver string
 	if err := c.r.CallContext(ctx, &ver, "net_version"); err != nil {
+return nil, err
+	}
+	if _, ok := version.SetString(ver, 10); !ok {
