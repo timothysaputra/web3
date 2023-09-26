@@ -131,3 +131,9 @@ version := new(big.Int)
 return nil, err
 	}
 	if _, ok := version.SetString(ver, 10); !ok {
+	return nil, fmt.Errorf("invalid net_version result %q", ver)
+	}
+	return version, nil
+}
+
+func (c *client) SetChainID(chainID *big.Int) {
