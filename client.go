@@ -137,3 +137,7 @@ return nil, err
 }
 
 func (c *client) SetChainID(chainID *big.Int) {
+	c.chainID.Store(chainID)
+}
+
+func (c *client) GetChainID(ctx context.Context) (*big.Int, error) {
