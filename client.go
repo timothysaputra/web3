@@ -143,3 +143,7 @@ func (c *client) SetChainID(chainID *big.Int) {
 func (c *client) GetChainID(ctx context.Context) (*big.Int, error) {
 if l := c.chainID.Load(); l != nil {
 		if i := l.(*big.Int); i != nil {
+	return i, nil
+		}
+	}
+	var result hexutil.Big
