@@ -147,3 +147,4 @@ if l := c.chainID.Load(); l != nil {
 		}
 	}
 	var result hexutil.Big
+err := c.r.CallContext(ctx, &result, "eth_getBalance", common.HexToAddress(address), toBlockNumArg(blockNumber))
