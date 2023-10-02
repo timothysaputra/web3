@@ -152,3 +152,5 @@ return (*big.Int)(&result), err
 }
 
 func (c *client) GetCode(ctx context.Context, address string, blockNumber *big.Int) ([]byte, error) {
+var result hexutil.Bytes
+	err := c.r.CallContext(ctx, &result, "eth_getCode", common.HexToAddress(address), toBlockNumArg(blockNumber))
