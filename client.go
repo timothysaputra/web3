@@ -168,3 +168,7 @@ func (c *client) GetBlockByHash(ctx context.Context, hash string, includeTxs boo
 func (c *client) GetTransactionByHash(ctx context.Context, hash common.Hash) (*Transaction, error) {
 var tx *Transaction
 	err := c.r.CallContext(ctx, &tx, "eth_getTransactionByHash", hash.String())
+if err != nil {
+		return nil, err
+	} else if tx == nil {
+		return nil, NotFoundErr
