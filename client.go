@@ -172,3 +172,9 @@ if err != nil {
 		return nil, err
 	} else if tx == nil {
 		return nil, NotFoundErr
+}
+	}
+	return r, err
+}
+
+func (c *client) GetGasPrice(ctx context.Context) (*big.Int, error) {
