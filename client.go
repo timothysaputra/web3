@@ -178,3 +178,5 @@ if err != nil {
 }
 
 func (c *client) GetGasPrice(ctx context.Context) (*big.Int, error) {
+var hex hexutil.Big
+	if err := c.r.CallContext(ctx, &hex, "eth_gasPrice"); err != nil {
