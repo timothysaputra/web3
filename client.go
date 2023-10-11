@@ -180,3 +180,9 @@ if err != nil {
 func (c *client) GetGasPrice(ctx context.Context) (*big.Int, error) {
 var hex hexutil.Big
 	if err := c.r.CallContext(ctx, &hex, "eth_gasPrice"); err != nil {
+		return nil, err
+	}
+	return (*big.Int)(&hex), nil
+}
+
+func (c *client) GetPendingTransactionCount(ctx context.Context, account common.Address) (uint64, error) {
