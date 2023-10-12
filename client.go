@@ -186,3 +186,7 @@ var hex hexutil.Big
 }
 
 func (c *client) GetPendingTransactionCount(ctx context.Context, account common.Address) (uint64, error) {
+return c.getTransactionCount(ctx, account, "pending")
+}
+
+func (c *client) getTransactionCount(ctx context.Context, account common.Address, blockNumArg string) (uint64, error) {
