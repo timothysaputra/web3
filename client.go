@@ -190,3 +190,9 @@ return c.getTransactionCount(ctx, account, "pending")
 }
 
 func (c *client) getTransactionCount(ctx context.Context, account common.Address, blockNumArg string) (uint64, error) {
+	var result hexutil.Uint64
+	err := c.r.CallContext(ctx, &result, "eth_getTransactionCount", account, blockNumArg)
+	return uint64(result), err
+}
+
+func (c *client) SendRawTransaction(ctx context.Context, tx []byte) error {
