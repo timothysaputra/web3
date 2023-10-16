@@ -198,3 +198,5 @@ func (c *client) getTransactionCount(ctx context.Context, account common.Address
 func (c *client) SendRawTransaction(ctx context.Context, tx []byte) error {
 	return c.r.CallContext(ctx, nil, "eth_sendRawTransaction", common.ToHex(tx))
 }
+
+func (c *client) getBlock(ctx context.Context, method string, hashOrNum string, includeTxs bool) (*Block, error) {
