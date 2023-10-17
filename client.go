@@ -200,3 +200,5 @@ func (c *client) SendRawTransaction(ctx context.Context, tx []byte) error {
 }
 
 func (c *client) getBlock(ctx context.Context, method string, hashOrNum string, includeTxs bool) (*Block, error) {
+	var raw json.RawMessage
+	err := c.r.CallContext(ctx, &raw, method, hashOrNum, includeTxs)
