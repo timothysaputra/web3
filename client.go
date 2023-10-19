@@ -205,3 +205,7 @@ func (c *client) getBlock(ctx context.Context, method string, hashOrNum string, 
 if err != nil {
 		return nil, err
 	} else if len(raw) == 0 {
+return nil, NotFoundErr
+	}
+	var block Block
+	if err := json.Unmarshal(raw, &block); err != nil {
