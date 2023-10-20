@@ -209,3 +209,6 @@ return nil, NotFoundErr
 	}
 	var block Block
 	if err := json.Unmarshal(raw, &block); err != nil {
+	return nil, fmt.Errorf("failed to unmarshal json response: %v", err)
+	}
+	// Quick-verify transaction and uncle lists. This mostly helps with debugging the server.
