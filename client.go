@@ -212,3 +212,4 @@ return nil, NotFoundErr
 	return nil, fmt.Errorf("failed to unmarshal json response: %v", err)
 	}
 	// Quick-verify transaction and uncle lists. This mostly helps with debugging the server.
+if block.Sha3Uncles == types.EmptyUncleHash && len(block.Uncles) > 0 {
