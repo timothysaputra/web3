@@ -213,3 +213,6 @@ return nil, NotFoundErr
 	}
 	// Quick-verify transaction and uncle lists. This mostly helps with debugging the server.
 if block.Sha3Uncles == types.EmptyUncleHash && len(block.Uncles) > 0 {
+	return nil, fmt.Errorf("server returned non-empty uncle list but block header indicates no uncles")
+	}
+	if block.Sha3Uncles != types.EmptyUncleHash && len(block.Uncles) == 0 {
