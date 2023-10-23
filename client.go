@@ -216,3 +216,6 @@ if block.Sha3Uncles == types.EmptyUncleHash && len(block.Uncles) > 0 {
 	return nil, fmt.Errorf("server returned non-empty uncle list but block header indicates no uncles")
 	}
 	if block.Sha3Uncles != types.EmptyUncleHash && len(block.Uncles) == 0 {
+return nil, fmt.Errorf("server returned empty uncle list but block header indicates uncles")
+	}
+	if block.TxsRoot == types.EmptyRootHash && block.TxCount() > 0 {
