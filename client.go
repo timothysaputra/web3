@@ -223,3 +223,6 @@ return nil, fmt.Errorf("server returned empty uncle list but block header indica
 	}
 	if block.TxsRoot != types.EmptyRootHash && len(block.TxsRoot) == 0 {
 		return nil, fmt.Errorf("server returned empty transaction list but block header indicates transactions")
+}
+	// Load uncles because they are not included in the block response.
+	var uncles []*types.Header
