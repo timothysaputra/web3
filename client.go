@@ -226,3 +226,5 @@ return nil, fmt.Errorf("server returned empty uncle list but block header indica
 }
 	// Load uncles because they are not included in the block response.
 	var uncles []*types.Header
+if len(block.Uncles) > 0 {
+		uncles = make([]*types.Header, len(block.Uncles))
