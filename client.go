@@ -228,3 +228,5 @@ return nil, fmt.Errorf("server returned empty uncle list but block header indica
 	var uncles []*types.Header
 if len(block.Uncles) > 0 {
 		uncles = make([]*types.Header, len(block.Uncles))
+reqs := make([]rpc.BatchElem, len(block.Uncles))
+		for i := range reqs {
