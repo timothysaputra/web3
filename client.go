@@ -230,3 +230,5 @@ if len(block.Uncles) > 0 {
 		uncles = make([]*types.Header, len(block.Uncles))
 reqs := make([]rpc.BatchElem, len(block.Uncles))
 		for i := range reqs {
+reqs[i] = rpc.BatchElem{
+				Method: "eth_getUncleByBlockHashAndIndex",
