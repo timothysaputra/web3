@@ -232,3 +232,8 @@ reqs := make([]rpc.BatchElem, len(block.Uncles))
 		for i := range reqs {
 reqs[i] = rpc.BatchElem{
 				Method: "eth_getUncleByBlockHashAndIndex",
+Args:   []interface{}{block.Hash, hexutil.EncodeUint64(uint64(i))},
+				Result: &uncles[i],
+			}
+		}
+		if err := c.r.BatchCallContext(ctx, reqs); err != nil {
