@@ -237,3 +237,6 @@ Args:   []interface{}{block.Hash, hexutil.EncodeUint64(uint64(i))},
 			}
 		}
 		if err := c.r.BatchCallContext(ctx, reqs); err != nil {
+	return nil, err
+		}
+		for i := range reqs {
