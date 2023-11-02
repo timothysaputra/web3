@@ -240,3 +240,4 @@ Args:   []interface{}{block.Hash, hexutil.EncodeUint64(uint64(i))},
 	return nil, err
 		}
 		for i := range reqs {
+if reqs[i].Error != nil {
