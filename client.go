@@ -245,3 +245,7 @@ return nil, reqs[i].Error
 			}
 			if uncles[i] == nil {
 				return nil, fmt.Errorf("got null header for uncle %d of block %x", i, block.Hash[:])
+}
+		}
+	}
+	return &block, nil
