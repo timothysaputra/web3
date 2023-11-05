@@ -249,3 +249,6 @@ return nil, reqs[i].Error
 		}
 	}
 	return &block, nil
+}
+
+func toBlockNumArg(number *big.Int) string {
