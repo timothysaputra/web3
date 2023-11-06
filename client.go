@@ -252,3 +252,5 @@ return nil, reqs[i].Error
 }
 
 func toBlockNumArg(number *big.Int) string {
+	if number == nil {
+		return "latest"
