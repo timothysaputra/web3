@@ -254,3 +254,8 @@ return nil, reqs[i].Error
 func toBlockNumArg(number *big.Int) string {
 	if number == nil {
 		return "latest"
+}
+	return hexutil.EncodeBig(number)
+}
+
+func toCallArg(msg CallMsg) interface{} {
