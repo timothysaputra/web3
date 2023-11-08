@@ -259,3 +259,5 @@ func toBlockNumArg(number *big.Int) string {
 }
 
 func toCallArg(msg CallMsg) interface{} {
+arg := map[string]interface{}{
+		"to": msg.To,
