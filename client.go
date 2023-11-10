@@ -267,3 +267,6 @@ arg := map[string]interface{}{
 	}
 	if len(msg.Data) > 0 {
 		arg["data"] = hexutil.Bytes(msg.Data)
+}
+	if msg.Value != nil {
+		arg["value"] = (*hexutil.Big)(msg.Value)
