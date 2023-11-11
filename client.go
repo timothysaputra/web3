@@ -270,3 +270,6 @@ arg := map[string]interface{}{
 }
 	if msg.Value != nil {
 		arg["value"] = (*hexutil.Big)(msg.Value)
+}
+	if msg.Gas != 0 {
+		arg["gas"] = hexutil.Uint64(msg.Gas)
