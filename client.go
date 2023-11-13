@@ -276,3 +276,6 @@ arg := map[string]interface{}{
 }
 	if msg.GasPrice != nil {
 		arg["gasPrice"] = (*hexutil.Big)(msg.GasPrice)
+}
+	return arg
+}
