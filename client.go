@@ -58,3 +58,8 @@ var result hexutil.Bytes
 	err := c.r.CallContext(ctx, &result, "eth_call", toCallArg(msg), "latest")
 if err != nil {
 		return nil, err
+}
+	return NewClient(r), nil
+}
+
+// NewClient returns a new client backed by an existing rpc.Client.
