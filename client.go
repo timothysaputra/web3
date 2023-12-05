@@ -92,3 +92,11 @@ func NewClient(r *rpc.Client) Client {
 
 type client struct {
 	r       *rpc.Client
+chainID atomic.Value
+}
+
+func (c *client) Close() {
+	c.r.Close()
+}
+
+func (c *client) Call(ctx context.Context, msg CallMsg) ([]byte, error) {
