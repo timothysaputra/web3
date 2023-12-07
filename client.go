@@ -102,3 +102,5 @@ func (c *client) Close() {
 func (c *client) Call(ctx context.Context, msg CallMsg) ([]byte, error) {
 	var result hexutil.Bytes
 	err := c.r.CallContext(ctx, &result, "eth_call", toCallArg(msg), "latest")
+if err != nil {
+		return nil, err
